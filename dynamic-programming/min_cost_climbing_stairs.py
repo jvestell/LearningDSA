@@ -27,12 +27,14 @@ class Solution:
         
         # Fill the dp array using the recurrence relation
         for i in range(2, n):
+            #The next element will be the cost of the current step + the minimum of the previous step or the step before the previous step
             dp[i] = cost[i] + min(dp[i-1], dp[i-2])
-        
+        print(dp)
         # The minimum cost will be to step beyond the last or second-to-last step
         return min(dp[n-1], dp[n-2])
         
 s = Solution()
-print(s.minCostClimbingStairs([10,15,20]))
-print(s.minCostClimbingStairs([1,100,1,1,1,100,1,1,100,1]))
+#print(s.minCostClimbingStairs([10,15,20]))
+#print(s.minCostClimbingStairs([1,100,1,1,1,100,1,1,100,1]))
+print(s.minCostClimbingStairs([1,6,2,4,4,11,1,2,14,9]))
 
