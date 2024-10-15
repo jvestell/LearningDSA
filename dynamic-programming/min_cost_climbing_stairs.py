@@ -13,13 +13,25 @@ Output: 15
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         n = len(cost)
-        if n == 1:
+        
+        # Base cases
+        if n == 0:
+            return 0
+        elif n == 1:
             return cost[0]
-        elif n == 2:
-            return min(cost[0], cost[1])
-        else:
-            return min(self.minCostClimbingStairs(cost[:-1]), self.minCostClimbingStairs(cost[:-2]))
-    
+        
+        # Initialize the dp array
+        dp = [0] * n
+        dp[0] = cost[0]
+        dp[1] = cost[1]
+        
+        # Fill the dp array using the recurrence relation
+        for i in range(2, n):
+            dp[i] = cost[i] + min(dp[i-1], dp[i-2])
+        
+        # The minimum cost will be to step beyond the last or second-to-last step
+        return min(dp[n-1], dp[n-2])
+        
 s = Solution()
 print(s.minCostClimbingStairs([10,15,20]))
 print(s.minCostClimbingStairs([1,100,1,1,1,100,1,1,100,1]))
