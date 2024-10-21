@@ -9,13 +9,19 @@ from typing import List
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         n = len(nums)
-        answer = [1] * n
+        answer = [1] * n  # Initialize answer array with 1s
+        
+        # Calculate left products
         for i in range(1, n):
             answer[i] = answer[i - 1] * nums[i - 1]
-        right_product = 1
+        
+        right_product = 1  # Initialize right product
+        
+        # Calculate right products and update answer
         for i in range(n - 1, -1, -1):
-            answer[i] *= right_product
-            right_product *= nums[i]
+            answer[i] *= right_product  # Multiply current answer by right product
+            right_product *= nums[i]  # Update right product for next iteration
+        
         return answer
 
 solution = Solution()
