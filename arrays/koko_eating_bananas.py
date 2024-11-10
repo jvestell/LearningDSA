@@ -45,6 +45,9 @@ print(solution.minEatingSpeed([30,11,23,4,20], 5))
 print(solution.minEatingSpeed([30,11,23,4,20], 6))
 
 """
-solved on 2024-11-07
+solved on: 
+2024-11-07
+2024-11-08
+
 """
 
