@@ -13,16 +13,15 @@ Challenges are organized into folders based on the primary data structure or alg
 ```
 LearningDSA/
 ├── arrays/
-├── strings/
-├── linked_lists/
-├── stacks/
-├── queues/
-├── hash_tables/
-├── trees/
-├── heaps/
+├── binary-search/
+├── bit-manipulation/
+├── dynamic-programming/
 ├── graphs/
-├── dynamic_programming/
-├── sorting/
-├── searching/
-└── misc/
+├── hash-maps/
+├── linked-lists/
+├── math/
+├── matrices/
+├── stacks/
+├── strings/
+└── trees/
 ```
